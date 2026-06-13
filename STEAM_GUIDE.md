@@ -1,7 +1,7 @@
 # Nocturne HD on Steam Deck — the easy way (high FPS + QoL, in a few clicks)
 
-*Draft text for a Steam Community guide. Paste section-by-section into the Steam
-guide editor; replace https://github.com/cntrl-alt-lenny/smt3hd-deck-modkit with the repo URL.*
+*Source/Markdown version of the Steam Community guide. For pasting into the Steam
+guide editor, use `STEAM_GUIDE_BBCODE.txt` instead (Steam uses BBCode, not Markdown).*
 
 ---
 

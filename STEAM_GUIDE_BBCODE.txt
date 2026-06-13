@@ -1,0 +1,72 @@
+[h1]Nocturne HD on Steam Deck — the easy way (high FPS + QoL, in a few clicks)[/h1]
+
+[h2]Overview[/h2]
+Nocturne HD is great on the Steam Deck, but it needs a few fixes and tweaks to be at its best: the panic radar is broken, it's locked to 30 FPS, and the setup (MelonLoader + the right .NET runtime + the correct launch options) trips a lot of people up.
+
+I made a tiny installer that does the fiddly parts for you. You pick the mods from a list, it finds your game (even on a microSD card), installs everything, and tells you the two things you have to click yourself. [b]It keeps the vanilla experience[/b] — only fixes and display/convenience tweaks, nothing that changes game balance — so it's safe for a first playthrough.
+
+[quote]Want to do it all by hand instead? The classic full guide by ffrasisti [ARG] covers every mod individually. This guide is the fast path.[/quote]
+
+[h2]Before you start[/h2]
+[olist]
+[*]Install [b]Shin Megami Tensei III Nocturne HD Remaster[/b] from Steam.
+[*][b]Launch it once[/b], then quit. (This creates the Proton prefix the installer needs. It's fine if you just reach the title screen.)
+[/olist]
+
+[h2]Step 1 — Run the installer[/h2]
+[olist]
+[*]Switch to [b]Desktop Mode[/b] (hold Power → Switch to Desktop).
+[*]Download [b]Install-SMT3-Mods.desktop[/b] from the Releases page: [url=https://github.com/cntrl-alt-lenny/smt3hd-deck-modkit/releases/latest]github.com/cntrl-alt-lenny/smt3hd-deck-modkit/releases/latest[/url]
+[*]Right-click it → [b]Properties → Permissions → tick "Is executable"[/b] (KDE blocks downloaded shortcuts until you allow them), then [b]double-click it[/b].
+[i](Prefer the terminal? Download install.py instead and run: python3 ~/Downloads/install.py in Konsole.)[/i]
+[*]Tick the mods you want. Defaults (radar fix, high FPS, buff display) are a great vanilla-friendly set. Pick [b]60 FPS[/b] on an LCD Deck, [b]90 FPS[/b] on the OLED.
+[*]Let it finish. It downloads MelonLoader and your mods, and sets up .NET inside the game automatically — then offers to delete the shortcut.
+[/olist]
+
+[h3]Mods you can pick[/h3]
+[list]
+[*][b]Fixed Encounter Radar[/b] — fixes the broken random-encounter warning. [i](Get this.)[/i]
+[*][b]Graphics Configurator[/b] — unlocks 60/90 FPS and more. [i](Get this.)[/i]
+[*][b]Display Buffs[/b] — shows buff/debuff levels in battle. [i](Recommended.)[/i]
+[*][b]Minimap Over Compass[/b] — minimap in the radar. [i](Optional.)[/i]
+[*][b]Show Skill Changes[/b] — see skill-mutation results. [i](Optional, English only.)[/i]
+[*][b]Skip PuzzleBoy[/b] — buy your way past the minigame. [i](Optional.)[/i]
+[/list]
+
+[h2]Step 2 — Two clicks you have to do yourself[/h2]
+Steam won't let a script change these, so do them once:
+
+[b]A) Set the launch options.[/b] Back in Steam, right-click the game → [b]Properties → General → Launch Options[/b], and paste exactly:
+[code]WINEDLLOVERRIDES="version=n,b" %command% --melonloader.hideconsole[/code]
+This loads the mods and hides MelonLoader's console window. [b]If you skip the --melonloader.hideconsole part, the console steals focus and the game ignores your controller.[/b]
+
+[b]B) Play in Game Mode.[/b] Go back to [b]Gaming Mode[/b] to actually play. The controller works reliably there (Desktop Mode is finicky — that's a SteamOS thing, not the mods).
+
+That's it — launch the game and you should be at high FPS with a working radar.
+
+[h2]Optional — back-button hotkeys[/h2]
+The FPS mod uses keyboard keys you can map to the grip buttons. In [b]Game Mode[/b], open the game's [b]controller settings[/b] (Edit Layout → Back Grip Buttons) and add these as [b]keyboard[/b] bindings:
+[list]
+[*][b]L4 → F9[/b] — hide the UI
+[*][b]R4 → F11[/b] — toggle 60/90 ↔ 30 FPS
+[*][b]R5 → F10[/b] — speedhack (fast-forward)
+[/list]
+Do this in the Steam controller UI. [b]Don't[/b] edit controller config files by hand — a bad edit makes Steam send [i]no[/i] gamepad input at all (you'll think your Deck broke).
+
+[h2]Optional — the big extras (manual)[/h2]
+These are too large / awkward to automate, but worth it:
+[list]
+[*][b]Widescreen cutscenes[/b] — replaces the compressed 4:3 FMVs. GameBanana mod [b]400151[/b] (download the actual videos from the author's Google Drive, "Widescreen FMV"). Drop smt3hd_Data into the game root.
+[*][b]HD audio[/b] — higher-quality music (still a work in progress). GameBanana [b]56149[/b] / the r/Megaten release post.
+[/list]
+
+[h2]Troubleshooting[/h2]
+[list]
+[*][b]Controller does nothing, but touch works[/b] → you're in Desktop Mode, or you hand-edited a controller config. Use Game Mode and Steam's default layout.
+[*][b]A "missing .NET" error on launch[/b] → launch the game once first, then re-run the installer so it can install .NET into the prefix.
+[*][b]MelonLoader console keeps popping up[/b] → the --melonloader.hideconsole part of the launch options is missing.
+[*][b]Mods don't load[/b] → make sure you didn't update MelonLoader past [b]0.6.1[/b]; newer versions break these mods.
+[/list]
+
+[h2]Credits[/h2]
+All mods belong to their GameBanana authors — [b]bud.[/b], [b]Matthiew Purple[/b], and others — and [b]LavaGang[/b] for MelonLoader. Please like/thank them on their pages. The installer just fetches and places their work; it never rehosts anything.
