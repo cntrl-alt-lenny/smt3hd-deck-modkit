@@ -1,7 +1,7 @@
 # Nocturne HD on Steam Deck — the easy way (high FPS + QoL, in a few clicks)
 
 *Draft text for a Steam Community guide. Paste section-by-section into the Steam
-guide editor; replace `YOUR-GITHUB-LINK` with the repo URL.*
+guide editor; replace https://github.com/cntrl-alt-lenny/smt3hd-deck-modkit with the repo URL.*
 
 ---
 
@@ -30,7 +30,7 @@ game balance — so it's safe for a first playthrough.
 ## Step 1 — Run the installer
 
 1. Switch to **Desktop Mode** (hold Power → Switch to Desktop).
-2. Download **`Install-SMT3-Mods.desktop`** from here: `YOUR-GITHUB-LINK`
+2. Download **`Install-SMT3-Mods.desktop`** from here: https://github.com/cntrl-alt-lenny/smt3hd-deck-modkit
 3. Right-click it → **Properties → Permissions → tick "Is executable"** (KDE
    blocks downloaded shortcuts until you allow them), then **double-click it**.
    *(Prefer the terminal? Download `install.py` instead and run

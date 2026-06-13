@@ -5,5 +5,5 @@ Name=Install SMT3 Nocturne Deck Mods
 Comment=One-click MelonLoader + QoL mods for Shin Megami Tensei III Nocturne HD
 Icon=applications-games
 Terminal=true
-Exec=bash -c 'curl -fsSL "https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/smt3hd-deck-modkit/main/install.py" -o /tmp/smt3_install.py && python3 /tmp/smt3_install.py --desktop "%k" || { echo; echo "Something went wrong — press Enter to close."; read; }'
+Exec=bash -c 'curl -fsSL "https://raw.githubusercontent.com/cntrl-alt-lenny/smt3hd-deck-modkit/main/install.py" -o /tmp/smt3_install.py && python3 /tmp/smt3_install.py --desktop "%k" || { echo; echo "Something went wrong — press Enter to close."; read; }'
 Categories=Game;Utility;
